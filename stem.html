@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Women in STEM | Empowerment Program</title>
+  <link rel="stylesheet" href="stem.css">
+  
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Women in STEM Empowerment Program</h1>
+    <p>In collaboration with <strong>ORA's Treats</strong></p>
+    <p>April 27, 2025 | Oyo State, Ibadan Nigeria</p>
+  </header>
+
+  <!-- About Section -->
+  <section>
+    <h2>About the Program</h2>
+    <p>This event is dedicated to empowering women and girls in Nigeria to pursue careers in Science,
+       Technology, Engineering, and Mathematics (STEM). In partnership with Ora's Treat,
+        we’re creating an inspiring space for learning, mentorship, 
+        networkingand community building—complete with STEM talks, workshops, and delicious treats!</p>
+  </section>
+
+  <!-- Speakers Section -->
+  <section>
+    <h2>Featured Speakers</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Dr. Amara Obi</h3>
+        <p>AI Researcher & Tech Advocate</p>
+      </div>
+      <div class="card">
+        <h3>Oluwadamilola Ayeni</h3>
+        <p>Software Engineer & Women in Tech Ambassador</p>
+      </div>
+      <div class="card">
+        <h3>Tola Adebayo</h3>
+        <p>UI/UX Designer & Product Coach</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule Section -->
+  <section>
+    <h2>Program Schedule</h2>
+    <div class="schedule-item">
+      <strong>9:00 AM</strong> - Welcome Breakfast by ORA's Treats
+    </div>
+    <div class="schedule-item">
+      <strong>10:00 AM</strong> - Opening Keynote by Dr. Amara Obi
+    </div>
+    <div class="schedule-item">
+      <strong>11:30 AM</strong> - Panel: Women Breaking Barriers in STEM
+    </div>
+    <div class="schedule-item">
+      <strong>1:00 PM</strong> - Workshop: Build Your First Website
+    </div>
+    <div class="schedule-item">
+      <strong>3:00 PM</strong> - Networking & Dessert Hour
+    </div>
+  </section>
+
+  <!-- Countdown Timer -->
+  <section>
+    <h2>Countdown to Empowerment</h2>
+    <div id="countdown"></div>
+  </section>
+
+  <!-- RSVP Form -->
+  <section>
+    <h2>RSVP Now</h2>
+    <form>
+      <input type="text" placeholder="Your Full Name" required />
+      <input type="email" placeholder="Your Email Address" required />
+      <textarea placeholder="Why are you excited to attend?" rows="3"></textarea>
+      <button type="submit">Submit RSVP</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Women in STEM | Powered by ORA's Treats</p>
+  </footer>
+
+  <!-- Countdown Script -->
+  <script>
+    const countdown = () => {
+      const eventDate = new Date("April 27, 2025 09:00:00").getTime();
+      const now = new Date().getTime();
+      const gap = eventDate - now;
+
+      const second = 1000,
+            minute = second * 60,
+            hour = minute * 60,
+            day = hour * 24;
+
+      const d = Math.floor(gap / day);
+      const h = Math.floor((gap % day) / hour);
+      const m = Math.floor((gap % hour) / minute);
+      const s = Math.floor((gap % minute) / second);
+
+      document.getElementById("countdown").innerHTML =
+        `${d}d ${h}h ${m}m ${s}s`;
+
+      if (gap < 0) {
+        document.getElementById("countdown").innerHTML = "The event has begun!";
+      }
+    };
+
+    setInterval(countdown, 1000);
+  </script>
+</body>
+</html>
